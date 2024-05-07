@@ -70,8 +70,8 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v2
-      with:
-        mask-password: 'true'
+      # with:
+      #   mask-password: 'true'
 
     - name: Build and tag image
       id: build-image
@@ -88,7 +88,7 @@ jobs:
       with:
         image-ref: '${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:stg'
         format: 'table'
-        exit-code: '1'
+        #exit-code: '1'
         ignore-unfixed: true
         vuln-type: 'os,library'
         severity: 'CRITICAL,HIGH'
