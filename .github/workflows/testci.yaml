@@ -13,7 +13,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  bulid:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
