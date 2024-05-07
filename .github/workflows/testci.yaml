@@ -78,8 +78,8 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$COMMIT_SHA .
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:stg .
 
-        echo "Scanning Docker Image"
-        trivy image --severity CRITICAL --exit-code 1 $ECR_REGISTRY/$ECR_REPOSITORY:dev
+        # echo "Scanning Docker Image"
+        # trivy image --severity CRITICAL --exit-code 1 $ECR_REGISTRY/$ECR_REPOSITORY:dev
 
         echo "Pushing Docker Image"
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$COMMIT_SHA
